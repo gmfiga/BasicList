@@ -51,9 +51,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func doAddAnimal(_ sender: Any) {
-        
-    }
+        let alertController = UIAlertController(title: "New Animal",
+                                                message: "Please ad your new animal below:",
+                                                preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addTextField(configurationHandler: {(nameField) in
+            nameField.text = ""
+            nameField.placeholder = "Animal Name:"
+            nameField.isSecureTextEntry = false
+    })
     
+        alertController.addAction(UIAlertAction(title: "OK" , style: .default, handler: { [weak alertController] (_) in
+            let nameField = alertController?.textFields![0]
+            let name = nameField?.text
+            self.animals.append(name!)
+            self.tableView.reloadData()
+        }))
+        present(alertController, animated: true, completion: nil)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
