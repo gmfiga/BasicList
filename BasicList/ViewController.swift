@@ -13,7 +13,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var myButton: UIButton!
     
-    var animals: [String] = ["Dog", "Cat", "Hog"]
+    struct Animal {
+        var name: String
+        var img: UIImage
+    }
+    
+    var animals: [Animal] = []
+    
+    let dog: Animal = Animal(name: "dog", img: #imageLiteral(resourceName: "download.jpeg"))
+    let cat: Animal = Animal(name: "cat", img: #imageLiteral(resourceName: "Cat03.jpg"))
+    
     
     let cellReuseIdentifier = "cell"
     
@@ -23,6 +32,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        
+        animals.append(dog)
+        animals.append(cat)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,7 +45,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
         
-        cell.textLabel?.text = self.animals[indexPath.row]
+        cell.textLabel?.text = self.animals[indexPath.row].name
+        cell.imageView?.image = self.animals[indexPath.row].img
+        
         return cell
     }
     
@@ -59,13 +73,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             nameField.placeholder = "Animal Name:"
             nameField.isSecureTextEntry = false
     })
-    
+        alertController.addTextField(configurationHandler: {(imgField) in
+            imgField.text = ""
+            imgField.placeholder = "Name of the Image:"
+            imgField.isSecureTextEntry = false
+    })
+
         alertController.addAction(UIAlertAction(title: "OK" , style: .default, handler: { [weak alertController] (_) in
             let nameField = alertController?.textFields![0]
-            let name = nameField?.text
-            self.animals.append(name!)
+            let imgField = alertController?.textFields![1]
+            var newAnimal: Animal
+            if imgField?.text != "" {
+                newAnimal = Animal(name: (nameField?.text)!, img: UIImage(named : (imgField?.text)!)!)
+            } else {
+                newAnimal = Animal(name: (nameField?.text)!, img: UIImage(named: "Who's that Pokemon.png.gallery.jpg" )!)
+            }
+            self.animals.append(newAnimal)
             self.tableView.reloadData()
         }))
+    
+    
         present(alertController, animated: true, completion: nil)
     }
     
@@ -73,7 +100,4 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-

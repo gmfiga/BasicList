@@ -14,6 +14,9 @@
 		C3E8B76120E16386008C2EC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3E8B75F20E16386008C2EC2 /* LaunchScreen.storyboard */; };
 		C3E8B76C20E16387008C2EC2 /* BasicListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8B76B20E16387008C2EC2 /* BasicListTests.swift */; };
 		C3E8B77720E16387008C2EC2 /* BasicListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E8B77620E16387008C2EC2 /* BasicListUITests.swift */; };
+		C3E8B78620E171A6008C2EC2 /* Cat03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3E8B78420E171A5008C2EC2 /* Cat03.jpg */; };
+		C3E8B78720E171A6008C2EC2 /* download.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C3E8B78520E171A6008C2EC2 /* download.jpeg */; };
+		C3E8B78920E17919008C2EC2 /* Who's that Pokemon.png.gallery.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3E8B78820E17919008C2EC2 /* Who's that Pokemon.png.gallery.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		C3E8B77220E16387008C2EC2 /* BasicListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E8B77620E16387008C2EC2 /* BasicListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicListUITests.swift; sourceTree = "<group>"; };
 		C3E8B77820E16387008C2EC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3E8B78420E171A5008C2EC2 /* Cat03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Cat03.jpg; path = ../../Cat03.jpg; sourceTree = "<group>"; };
+		C3E8B78520E171A6008C2EC2 /* download.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = download.jpeg; path = ../../download.jpeg; sourceTree = "<group>"; };
+		C3E8B78820E17919008C2EC2 /* Who's that Pokemon.png.gallery.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Who's that Pokemon.png.gallery.jpg"; path = "../../Who's that Pokemon.png.gallery.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,9 @@
 		C3E8B75520E16386008C2EC2 /* BasicList */ = {
 			isa = PBXGroup;
 			children = (
+				C3E8B78820E17919008C2EC2 /* Who's that Pokemon.png.gallery.jpg */,
+				C3E8B78420E171A5008C2EC2 /* Cat03.jpg */,
+				C3E8B78520E171A6008C2EC2 /* download.jpeg */,
 				C3E8B75620E16386008C2EC2 /* AppDelegate.swift */,
 				C3E8B75820E16386008C2EC2 /* ViewController.swift */,
 				C3E8B75A20E16386008C2EC2 /* Main.storyboard */,
@@ -234,7 +243,10 @@
 			files = (
 				C3E8B76120E16386008C2EC2 /* LaunchScreen.storyboard in Resources */,
 				C3E8B75E20E16386008C2EC2 /* Assets.xcassets in Resources */,
+				C3E8B78720E171A6008C2EC2 /* download.jpeg in Resources */,
 				C3E8B75C20E16386008C2EC2 /* Main.storyboard in Resources */,
+				C3E8B78920E17919008C2EC2 /* Who's that Pokemon.png.gallery.jpg in Resources */,
+				C3E8B78620E171A6008C2EC2 /* Cat03.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
